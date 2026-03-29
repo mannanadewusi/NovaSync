@@ -53,3 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Start simulation after 3 seconds
     setTimeout(simulateLiveSignups, 3000);
+
+
+});
