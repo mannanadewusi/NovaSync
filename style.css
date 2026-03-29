@@ -52,7 +52,6 @@ body {
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
-/* ---- Header ---- */
 header {
     display: flex;
     justify-content: space-between;
@@ -513,7 +512,7 @@ header {
 
 .feature-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
 
@@ -766,6 +765,7 @@ footer {
         flex-direction: column;
         text-align: center;
         padding-top: 140px;
+        padding-bottom: 40px;
     }
     
     .hero-content {
@@ -782,6 +782,18 @@ footer {
     .hero-mockup {
         width: 100%;
         height: 400px;
+        margin-top: 40px;
+    }
+
+    .main-panel {
+        width: 90%;
+        height: 350px;
+    }
+
+    .side-panel {
+        width: 160px;
+        height: 200px;
+        bottom: 20px;
     }
 
     .steps-container {
@@ -796,20 +808,83 @@ footer {
         margin: 0;
         background: linear-gradient(180deg, transparent, rgba(255,255,255,0.2), transparent);
     }
+
+    .pain-solution, .features, .how-it-works, .final-cta {
+        padding: 80px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    header { padding: 20px 24px; }
+    
+    .hero-headline {
+        font-size: clamp(2.5rem, 8vw, 3.5rem);
+    }
+    
+    .main-panel {
+        height: 300px;
+    }
+    
+    .side-panel {
+        display: none; /* Hide side panel on smaller tablets to avoid clutter */
+    }
+    
+    .hero-mockup {
+        height: 300px;
+    }
+    
+    .pain-solution, .features, .how-it-works, .final-cta {
+        padding: 60px 0;
+    }
 }
 
 @media (max-width: 600px) {
+    header { padding: 16px 20px; }
+    
+    .logo {
+        font-size: 1.25rem;
+    }
+
+    .nav-cta a {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+
     .early-access-form {
         flex-direction: column;
         width: 100%;
     }
 
-    .header { padding: 20px; }
+    .email-input, .cta-button {
+        width: 100%;
+    }
     
     .footer-content {
         flex-direction: column;
         gap: 20px;
+        text-align: center;
     }
 
-    .final-cta-box { padding: 40px 20px; }
+    .final-cta-box { 
+        padding: 40px 20px; 
+    }
+    
+    .pain-card {
+        padding: 24px;
+    }
+    
+    .feature-card {
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 400px) {
+    .hero-headline {
+        font-size: 2.2rem;
+    }
+    
+    .social-proof {
+        flex-direction: column;
+        gap: 8px;
+    }
 }
