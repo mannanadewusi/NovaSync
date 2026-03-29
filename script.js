@@ -34,13 +34,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const simulateLiveSignups = () => {
         // Random intervals between 4 to 12 seconds
         const randomTime = Math.floor(Math.random() * (12000 - 4000 + 1) + 4000);
-        
+
         setTimeout(() => {
             currentCount += Math.floor(Math.random() * 3) + 1; // Add 1 to 3 users
-            if(liveCounterEl) {
+            if (liveCounterEl) {
                 // Add comma formatting
                 liveCounterEl.textContent = currentCount.toLocaleString();
-                
+
                 // Add slight flash effect
                 liveCounterEl.style.color = '#00f0ff';
                 setTimeout(() => {
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
             simulateLiveSignups();
         }, randomTime);
     };
-    
+
     // Start simulation after 3 seconds
     setTimeout(simulateLiveSignups, 3000);
 
@@ -60,9 +60,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const form = e.target;
         const btn = form.querySelector('button');
         const input = form.querySelector('input');
-        
+
         const originalText = btn.innerHTML;
-        
+
         // Loading state
         btn.innerHTML = '<span>Reserving...</span>';
         btn.style.opacity = '0.7';
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.style.color = '#fff';
             btn.style.opacity = '1';
             input.value = '';
-            
+
             // Revert back after 3s
             setTimeout(() => {
                 btn.innerHTML = originalText;
